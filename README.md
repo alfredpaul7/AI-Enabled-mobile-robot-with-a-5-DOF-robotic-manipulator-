@@ -1,456 +1,222 @@
-# AI-Enabled Mobile Robot with a 5-DOF Robotic Manipulator for Medical Emergency and Search-and-Rescue Operations
+# AI-Enabled Mobile Robot with Robotic Manipulator for Medical Emergencies and Search & Rescue Operations (AIMR)
+
+## Intelligent Mobile Manipulation Platform using ROS 2, YOLOv8, Sensor Fusion, IoT Monitoring, Wireless Teleoperation, and Embedded AI
+
 ---
 
 # Project Overview
 
-The **AI-Enabled Mobile Robot with a 5-DOF Robotic Manipulator for Medical Emergency and Search-and-Rescue Operations**, shortly termed as the **AI Mobile Rescue Manipulator System (AI-MRMS)**, is an intelligent robotic platform designed for hazardous environment exploration, emergency medical response, remote manipulation, and disaster rescue operations.
+The **AI-Enabled Mobile Robot with Robotic Manipulator (AIMR)** is an intelligent robotic platform developed for **medical emergency response, disaster management, industrial safety inspection, and search-and-rescue (SAR) operations in hazardous environments**.
 
-The platform integrates:
+Natural disasters such as earthquakes, floods, landslides, industrial accidents, and structural collapses often create environments where human intervention becomes dangerous, time-consuming, and inefficient. This project addresses these challenges by developing a cost-effective, edge-AI-powered robotic system capable of autonomous navigation, hazard detection, environmental monitoring, and physical assistance.
 
-- Embedded systems
-- Artificial intelligence
-- Computer vision
-- Autonomous robotics
-- Sensor fusion
-- IoT monitoring
-- Robotic manipulation
+The system integrates:
 
-The robot supports **two modes of operation**:
+- Autonomous Mobile Robotics
+- Robotic Manipulation
+- Embedded Artificial Intelligence
+- Computer Vision
+- Sensor Fusion
+- IoT Monitoring
+- Wireless Communication
+- Edge Computing
 
-## 1. Manual Long-Range Remote Control Mode
+The robot combines:
 
-Using:
+- Raspberry Pi 5
+- Arduino Uno
+- ROS 2
+- YOLOv8
+- Wheel Encoders
+- IMU
+- nRF24L01
+- MQ Gas Sensors
+- Blynk IoT Platform
+- Custom 5-DoF Robotic Manipulator
 
-- Arduino Nano transmitter
-- nRF24L01 wireless communication
-- Dual joystick interface
+to perform intelligent monitoring, navigation, hazard detection, and manipulation tasks in complex environments.
 
-## 2. Autonomous ROS2 Mode
-
-Using:
-
-- ROS2 middleware
-- Nav2 navigation stack
-- LiDAR-based obstacle avoidance
-- Sensor fusion with EKF
-- Autonomous path planning
-
-The robot uses:
-
-- Raspberry Pi 4 for AI inference
-- Arduino Uno for low-level motor control
-- 5-DOF robotic manipulator
-- Tracked mobile chassis
-- Hazard sensing modules
-
-The robot can:
-
-- Detect humans and hazards
-- Monitor environmental gases
-- Stream live video
-- Deliver medicines
-- Manipulate emergency objects
-- Navigate autonomously
+This project directly addresses **Smart India Hackathon (SIH-1533)** problem statement.
 
 ---
 
-# Remarks
+# Abstract
 
-- Designing the complete mechanical system using SolidWorks
-- Programming embedded controllers in C++ using Visual Studio Code
-- Implementing long-range wireless communication using nRF24L01
-- Developing an AI-based object detection pipeline using Roboflow and YOLOv8
-- Deploying real-time inference on Raspberry Pi 4
-- Integrating Blynk IoT visualization
-- Implementing ROS2-based modular communication for autonomous operation
-
-This project demonstrates successful integration of embedded systems, AI, computer vision, IoT, and autonomous robotics.
+This project presents the design and development of an AI-enabled mobile robot integrated with a 5-DoF robotic manipulator for medical emergency response and search-and-rescue operations. The system operates in two modes: **remote operation** using nRF wireless communication and **autonomous operation** using ROS 2, where wheel encoders and IMU-based sensor fusion enable localization and navigation without LiDAR. YOLOv8 performs real-time object detection with bounding-box visualization and live video streaming, while environmental conditions are monitored using gas and fire sensors, with sensor data transmitted and remotely monitored through Blynk IoT. The robotic manipulator enables medicine delivery, object handling, and lightweight debris removal, providing a scalable and cost-effective robotic solution for hazardous environments.
 
 ---
 
 # Project Highlights
 
-- Designed tracked mobile rescue robot using SolidWorks
-- Fabricated mild steel chassis
-- Designed 5-DOF robotic manipulator
-- 3D printed arm using PLA
-- Implemented wireless control using nRF24L01
-- Developed YOLOv8 object detection system
-- Trained using Roboflow + Google Colab
-- Optimized using NCNN for Raspberry Pi
-- Integrated ROS2 autonomous navigation
-- Implemented MoveIt2 manipulation
-- Added IoT monitoring using Blynk
-- Integrated gas and fire sensing
+✅ Designed and developed a fully integrated AI-enabled rescue robot.
+
+✅ Implemented **dual-mode operation**:
+
+- Autonomous ROS 2 Mode
+- Manual Wireless nRF Mode
+
+✅ Developed localization without LiDAR using:
+
+- Wheel Encoders
+- IMU
+- Extended Kalman Filter
+
+✅ Implemented YOLOv8-based real-time object detection.
+
+✅ Designed and fabricated a custom 5-DoF robotic arm.
+
+✅ Integrated environmental hazard monitoring.
+
+✅ Implemented live remote monitoring using Blynk.
+
+✅ Developed edge-AI deployment on Raspberry Pi.
+
+---
+
+# Objectives
+
+The main objectives of this project are:
+
+- To design and develop an intelligent mobile robot for hazardous environments.
+- To enable autonomous navigation using encoder and IMU-based sensor fusion.
+- To implement real-time hazard and victim detection.
+- To monitor environmental conditions.
+- To enable wireless teleoperation.
+- To develop a robotic manipulator for medicine delivery and object handling.
+- To provide remote monitoring and control.
 
 ---
 
 # Features
 
-## Autonomous Navigation
+# 1. Dual Mode Operation
 
-- ROS2
-- Nav2
-- SLAM
-- Obstacle avoidance
+## Autonomous Mode
 
-## AI Hazard Detection
+Powered by ROS 2.
 
-YOLOv8 detects:
+Capabilities:
+
+- Autonomous navigation
+- Localization
+- Waypoint following
+- Sensor fusion
+- Mobile manipulation
+- Mission execution
+
+## Remote Operation Mode
+
+Powered by nRF24L01.
+
+Capabilities:
+
+- Real-time manual control
+- Chassis movement
+- Arm manipulation
+- Gripper control
+- Emergency stop
+
+---
+
+# 2. AI-Based Object Detection
+
+Real-time object detection using:
+
+- YOLOv8 Nano
+- Raspberry Pi Camera
+
+Detected classes:
 
 - Person
 - Fire
 - Smoke
+- No Helmet
+- No Safety Vest
 - Debris
-- Hazard signs
-- No helmet
-- No safety vest
+- Obstacles
+- Hazard Signs
 
-## Hazard Monitoring
+Features:
 
-Sensors:
+- Bounding-box visualization
+- Confidence scoring
+- Live video streaming
+- Edge inference
 
-- MQ-2
-- MQ-7
-- MQ-135
-- Fire sensor
+Performance:
 
-## Vision-Based Manipulation
+- 4–6 FPS on Raspberry Pi
 
-- MoveIt2
-- 5-DOF arm
+---
 
-## Live Video Streaming
+# 3. Environmental Monitoring
 
-- Raspberry Pi Connect
+Integrated sensors:
 
-## IoT Monitoring
+- MQ2 → Smoke / LPG
+- MQ7 → Carbon Monoxide
+- MQ135 → Air Quality
+- Flame Sensor
 
-- Blynk dashboard
+Monitored parameters:
 
-## Long-Range Remote Control
+- Smoke
+- CO
+- Toxic gases
+- Fire
 
-- nRF24L01
+Data transmission:
+
+- Blynk IoT Dashboard
+
+Features:
+
+- Real-time alerts
+- Remote monitoring
+- Sensor visualization
+
+---
+
+# 4. Robotic Manipulator
+
+Custom-designed 5-DoF robotic arm.
+
+Applications:
+
+- Medicine delivery
+- First-aid delivery
+- Object handling
+- Lightweight debris removal
+
+Actuators:
+
+- MG996R Servo Motors
+- SG90 Servo Motors
+
+Payload:
+
+100–150 g
 
 ---
 
 # System Architecture
 
 ```text
-Environment
-      ↓
-Sensors + Pi Camera
-      ↓
-Raspberry Pi 4
-      ↓
-YOLOv8 Inference
-      ↓
-ROS2 Middleware
-      ↓
-Nav2 + EKF
-      ↓
-Motion Planning
-      ↓
-Arduino Controller
-      ↓
-Mobile Chassis + Robotic Arm
-      ↓
-Mission Execution
-```
-
----
-
-# Hardware Components
-
-| Component | Purpose |
-|-----------|---------|
-| Raspberry Pi 4 | AI inference |
-| Arduino Uno | Motor control |
-| Arduino Nano | Transmitter |
-| nRF24L01 | Wireless communication |
-| 2D LiDAR | Obstacle detection |
-| IMU | Orientation |
-| Wheel Encoders | Odometry |
-| Pi Camera | Vision |
-| MG996R | High torque joints |
-| SG90 | Wrist + gripper |
-| MQ-2 | Smoke |
-| MQ-7 | CO |
-| MQ-135 | Air quality |
-| Fire Sensor | Flame detection |
-
----
-
-# AI Vision Pipeline
-
-## Dataset Preparation
-
-Annotated using Roboflow.
-
-Classes:
-
-- fire
-- smoke
-- person
-- no_helmet
-- no_vest
-- debris
-- obstacle
-- hazard_sign
-
----
-
-## Training
-
-Framework:
-
-Ultralytics YOLOv8
-
-Training platform:
-
-Google Colab GPU
-
-Configuration:
-
-- Epochs: 100
-- Batch size: 16
-- Resolution: 640x640
-
-Validation:
-
-mAP@0.5 ≈ 85%
-
----
-
-## Deployment
-
-Export:
-
-NCNN optimized model
-
-Inference:
-
-4–6 FPS on Raspberry Pi 4
-
----
-
-# ROS2 Autonomous Operation
-
-## Why ROS2?
-
-ROS2 enables modular communication between:
-
-- Sensors
-- Localization
-- Navigation
-- Manipulation
-- Vision
-
----
-
-# ROS2 Interface Workflow
-
-```text
-LiDAR
-   +
-IMU
-   +
-Wheel Encoder
-      ↓
-robot_localization
-(EKF)
-      ↓
-/odom
-      ↓
-SLAM / Nav2
-      ↓
-/cmd_vel
-      ↓
-Arduino Motor Controller
-```
-
----
-
-# Step-by-Step ROS2 Integration
-
-## Step 1 — Install ROS2
-
-Recommended:
-
-Ubuntu 22.04 + ROS2 Humble
-
-Install:
-
-```bash
-sudo apt install ros-humble-desktop
-```
-
----
-
-## Step 2 — Create Workspace
-
-```bash
-mkdir -p ~/robot_ws/src
-cd ~/robot_ws
-colcon build
-```
-
----
-
-## Step 3 — Sensor Drivers
-
-Install:
-
-### LiDAR
-
-```bash
-sudo apt install ros-humble-rplidar-ros
-```
-
-### IMU
-
-Publish:
-
-```text
-/imu/data
-```
-
-### Encoders
-
-Publish:
-
-```text
-/wheel/odom
-```
-
----
-
-## Step 4 — Sensor Fusion
-
-Use:
-
-robot_localization package
-
-```bash
-sudo apt install ros-humble-robot-localization
-```
-
-Outputs:
-
-```text
-/odometry/filtered
-```
-
----
-
-## Step 5 — Navigation
-
-Install Nav2:
-
-```bash
-sudo apt install ros-humble-navigation2
-```
-
-Launch:
-
-```bash
-ros2 launch nav2_bringup navigation_launch.py
-```
-
----
-
-## Step 6 — Arduino Communication
-
-Use:
-
-rosserial or micro-ROS
-
-Topics:
-
-Subscribe:
-
-```text
-/cmd_vel
-```
-
-Arduino converts:
-
-```text
-linear velocity
-angular velocity
-```
-
-to:
-
-- Left motor PWM
-- Right motor PWM
-
----
-
-## Step 7 — Manipulator
-
-MoveIt2 receives:
-
-```text
-target_pose
-```
-
-Outputs:
-
-```text
-joint trajectories
-```
-
----
-
-# How It Works
-
-## Manual Mode
-
-Joystick → nRF24L01 → Arduino → Motors + Arm
-
-## Autonomous Mode
-
-Sensors → ROS2 → EKF → Nav2 → Arduino → Chassis
-
-## Vision Mode
-
-Pi Camera → YOLOv8 → Detection → MoveIt2 → Manipulator
-
-## Monitoring
-
-Sensors → Raspberry Pi → Blynk
-
----
-
-# Applications
-
-- Search and Rescue
-- Disaster Response
-- Medical Supply Delivery
-- Hazardous Inspection
-- Defense Robotics
-- Industrial Safety
-
----
-
-# Future Enhancements
-
-- Thermal camera
-- Victim detection
-- GPS navigation
-- Drone collaboration
-- Voice commands
-- Reinforcement learning
-
----
-
-# Conclusion
-
-The **AI Mobile Rescue Manipulator System (AI-MRMS)** successfully demonstrates the integration of embedded systems, artificial intelligence, ROS2 autonomous navigation, YOLOv8 vision, sensor fusion, IoT monitoring, and robotic manipulation into a functional emergency response platform.
-
-By integrating Raspberry Pi 4, Arduino controllers, nRF24L01 wireless communication, LiDAR, IMU, YOLOv8, MoveIt2, Nav2, and Blynk IoT, the robot performs hazard detection, environmental monitoring, autonomous navigation, and precise manipulation with minimal human intervention.
-
-This project establishes a strong foundation for next-generation autonomous medical emergency and search-and-rescue robotics.
-
----
+                         Raspberry Pi 5
+┌───────────────────────────────────────────────────────┐
+│                                                       │
+│ ROS 2 Nodes                                           │
+│                                                       │
+│ Encoder Node                                          │
+│ IMU Node                                              │
+│ EKF Localization                                      │
+│ Navigation Controller                                 │
+│ YOLO Detection Node                                   │
+│ MoveIt 2 Motion Planner                               │
+│ Arm Controller                                        │
+│ Sensor Monitoring Node                                │
+│ IoT Communication Node                                │
+│                                                       │
+└───────────────────────────────────────────────────────┘
+            ↓                                ↓
+       Mobile Base                     Robotic Arm
