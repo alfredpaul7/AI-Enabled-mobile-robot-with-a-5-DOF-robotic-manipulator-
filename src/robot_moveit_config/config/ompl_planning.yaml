@@ -1,0 +1,7 @@
+planner_configs:
+
+  RRTConnect:
+    type: geometric::RRTConnect
+
+arm:
+  default_planner_config: RRTConnect
