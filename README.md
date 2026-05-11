@@ -1,6 +1,4 @@
-# AI-Enabled Mobile Robot with Robotic Manipulator for Medical Emergencies and Search & Rescue Operations (AIMR)
-
-## Intelligent Mobile Manipulation Platform using ROS 2, Nav2, MoveIt 2, LiDAR, Sensor Fusion, Embedded AI, and IoT Monitoring
+# AI Enabled mobile robot with a 5 DOF robotic manipulator for medical emergency and search and rescue operations. 
 
 ---
 
